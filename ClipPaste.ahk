@@ -1,173 +1,162 @@
-;0.0
-;Feb 12, 2013
-;Ctrl + 1 2 3 4 5分别复制 Alt + 1 2 3 4 5分别粘贴
+﻿COUNT := 5
 
-;0.1
-;Mar 3, 2013
-;windows + w顺序粘贴五个变量
-
-;0.2
-;May 22, 2013
-;支持小键盘（Numclock是否打开均可）
-;windows + v粘贴并保存将要覆盖的内容到剪贴板
-
-;0.3
-;Aug 11, 2013
-;与系统原有快捷键不冲突
-
+Loop, %COUNT%
+{
+    iniRead, Strings%A_index%, settings.ini, constant, String%A_index%, %A_space%
+}
+Return
 
 ~^1::
 send ^c
-a = %Clipboard%
+Strings1 = %Clipboard%
 Return
 
 ~^NumpadEnd::
 send ^c
-a = %Clipboard%
+Strings1 = %Clipboard%
 Return
 
 ~^Numpad1::
 send ^c
-a = %Clipboard%
+Strings1 = %Clipboard%
 Return
 
 ~^2::
 send ^c
-b = %Clipboard%
+Strings2 = %Clipboard%
 Return
 
 ~^NumpadDown::
 send ^c
-b = %Clipboard%
+Strings2 = %Clipboard%
 Return
 
 ~^Numpad2::
 send ^c
-b = %Clipboard%
+Strings2 = %Clipboard%
 Return
 
 ~^3::
 send ^c
-c = %Clipboard%
+Strings3 = %Clipboard%
 Return
 
 ~^NumpadPgDn::
 send ^c
-c = %Clipboard%
+Strings3 = %Clipboard%
 Return
 
 ~^Numpad3::
 send ^c
-c = %Clipboard%
+Strings3 = %Clipboard%
 Return
 
 ~^4::
 send ^c
-d = %Clipboard%
+Strings4 = %Clipboard%
 Return
 
 ~^NumpadLeft::
 send ^c
-d = %Clipboard%
+Strings4 = %Clipboard%
 Return
 
 ~^Numpad4::
 send ^c
-d = %Clipboard%
+Strings4 = %Clipboard%
 Return
 
 ~^5::
 send ^c
-e = %Clipboard%
+Strings5 = %Clipboard%
 Return
 
 ~^NumpadClear::
 send ^c
-e = %Clipboard%
+Strings5 = %Clipboard%
 Return
 
 ~^Numpad5::
 send ^c
-e = %Clipboard%
+Strings5 = %Clipboard%
 Return
 
-
 ~!1::
-Clipboard = %a%
+Clipboard := Strings1
 send ^v
 Return
 
 ~!NumpadEnd::
-Clipboard = %a%
+Clipboard := Strings1
 send ^v
 Return
 
 ~!Numpad1::
-Clipboard = %a%
+Clipboard := Strings1
 send ^v
 Return
 
 
 ~!2::
-Clipboard = %b%
+Clipboard := Strings2
 send ^v
 Return
 
 ~!NumpadDown::
-Clipboard = %b%
+Clipboard := Strings2
 send ^v
 Return
 
 ~!Numpad2::
-Clipboard = %b%
+Clipboard := Strings2
 send ^v
 Return
 
 
 ~!3::
-Clipboard = %c%
+Clipboard := Strings3
 send ^v
 Return
 
 ~!NumpadPgDn::
-Clipboard = %c%
+Clipboard := Strings3
 send ^v
 Return
 
 ~!Numpad3::
-Clipboard = %c%
+Clipboard := Strings3
 send ^v
 Return
 
 
 ~!4::
-Clipboard = %d%
+Clipboard := Strings4
 send ^v
 Return
 
 ~!NumpadLeft::
-Clipboard = %d%
+Clipboard := Strings4
 send ^v
 Return
 
 ~!Numpad4::
-Clipboard = %d%
+Clipboard := Strings4
 send ^v
 Return
 
 
 ~!5::
-Clipboard = %e%
+Clipboard := Strings5
 send ^v
 Return
 
 ~!NumpadClear::
-Clipboard = %e%
+Clipboard := Strings5
 send ^v
 Return
 
 ~!Numpad5::
-Clipboard = %e%
+Clipboard := Strings5
 send ^v
 Return
 
@@ -188,3 +177,4 @@ Clipboard = %toPaste%
 send ^v
 Clipboard = %toCover%
 Return
+
